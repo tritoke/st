@@ -5,14 +5,14 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "JetBrains Mono:size=10";
 /* Spare fonts */
 static char *font2[] = {
 /*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
 /*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 };
 
-static int borderpx = 2;
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -79,8 +79,8 @@ static unsigned int cursorthickness = 2;
  *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
  * 0: disable (render all U25XX glyphs normally from the font).
  */
-const int boxdraw = 0;
-const int boxdraw_bold = 0;
+const int boxdraw = 1;
+const int boxdraw_bold = 1;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
 const int boxdraw_braille = 0;
@@ -113,47 +113,44 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* solarized dark */
-	"#073642",  /*  0: black    */
-	"#dc322f",  /*  1: red      */
-	"#859900",  /*  2: green    */
-	"#b58900",  /*  3: yellow   */
-	"#268bd2",  /*  4: blue     */
-	"#d33682",  /*  5: magenta  */
-	"#2aa198",  /*  6: cyan     */
-	"#eee8d5",  /*  7: white    */
-	"#002b36",  /*  8: brblack  */
-	"#cb4b16",  /*  9: brred    */
-	"#586e75",  /* 10: brgreen  */
-	"#657b83",  /* 11: bryellow */
-	"#839496",  /* 12: brblue   */
-	"#6c71c4",  /* 13: brmagenta*/
-	"#93a1a1",  /* 14: brcyan   */
-	"#fdf6e3",  /* 15: brwhite  */
+  "#121212", /* black */
+  "#f92672", /* red */
+  "#a6e22e", /* green */
+  "#f4bf75", /* yellow */
+  "#66d9ef", /* blue */
+  "#ae81ff", /* magenta */
+  "#a1efe4", /* cyan */
+  "#d0d0d0", /* white */
+  "#748765", /* bright black */
+  "#f92672", /* bright red */
+  "#a6e22e", /* bright green */
+  "#f4bf75", /* bright yellow */
+  "#66d9ef", /* bright blue */
+  "#ae81ff", /* bright magenta */
+  "#a1efe4", /* bright cyan */
+  "#f8f8f2", /* bright white */
 };
 
- 
 /* Terminal colors for alternate (light) palette */
 static const char *altcolorname[] = {
-	/* solarized light */
-	"#eee8d5",  /*  0: black    */
-	"#dc322f",  /*  1: red      */
-	"#859900",  /*  2: green    */
-	"#b58900",  /*  3: yellow   */
-	"#268bd2",  /*  4: blue     */
-	"#d33682",  /*  5: magenta  */
-	"#2aa198",  /*  6: cyan     */
-	"#073642",  /*  7: white    */
-	"#fdf6e3",  /*  8: brblack  */
-	"#cb4b16",  /*  9: brred    */
-	"#93a1a1",  /* 10: brgreen  */
-	"#839496",  /* 11: bryellow */
-	"#657b83",  /* 12: brblue   */
-	"#6c71c4",  /* 13: brmagenta*/
-	"#586e75",  /* 14: brcyan   */
-	"#002b36",  /* 15: brwhite  */
+  /* solarized light */
+  "#eee8d5",  /*  0: black    */
+  "#dc322f",  /*  1: red      */
+  "#859900",  /*  2: green    */
+  "#b58900",  /*  3: yellow   */
+  "#268bd2",  /*  4: blue     */
+  "#d33682",  /*  5: magenta  */
+  "#2aa198",  /*  6: cyan     */
+  "#073642",  /*  7: white    */
+  "#fdf6e3",  /*  8: brblack  */
+  "#cb4b16",  /*  9: brred    */
+  "#93a1a1",  /* 10: brgreen  */
+  "#839496",  /* 11: bryellow */
+  "#657b83",  /* 12: brblue   */
+  "#6c71c4",  /* 13: brmagenta*/
+  "#586e75",  /* 14: brcyan   */
+  "#002b36",  /* 15: brwhite  */
 };
-
 
 /*
  * Default colors (colorname index)

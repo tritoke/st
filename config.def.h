@@ -132,7 +132,6 @@ static const char *colorname[] = {
 	"#fdf6e3",  /* 15: brwhite  */
 };
 
- 
 /* Terminal colors for alternate (light) palette */
 static const char *altcolorname[] = {
 	/* solarized light */
