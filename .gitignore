@@ -2,4 +2,5 @@
 hb.o
 st.o
 x.o
+boxdraw.o
 st
