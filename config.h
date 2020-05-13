@@ -8,8 +8,8 @@
 static char *font = "JetBrains Mono:size=10";
 /* Spare fonts */
 static char *font2[] = {
-/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
-/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
+	"Noto Color Emoji:size=10", /* colour emoji */
+	"Symbols Nerd Font:size=10", /* cool terminal symbols */
 };
 
 static int borderpx = 0;
