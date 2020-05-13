@@ -6,6 +6,12 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "JetBrains Mono:size=10";
+/* Spare fonts */
+static char *font2[] = {
+	"Noto Color Emoji:size=10", /* colour emoji */
+	"Symbols Nerd Font:size=10", /* cool terminal symbols */
+};
+
 static int borderpx = 0;
 
 /*
