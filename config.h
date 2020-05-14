@@ -118,6 +118,43 @@ static const char *colorname[] = {
   "#ae81ff", /* bright magenta */
   "#a1efe4", /* bright cyan */
   "#f8f8f2", /* bright white */
+	
+	[255] = 0, /* use colours past 255 for fg and bg */
+	"#d0d0d0", /* foreground */
+	"#121212", /* background */
+	"#f8f8f2", /* cursor select */
+	"#d0d0d0", /* cursor reverse select */
+};
+
+ 
+/* Terminal colors for alternate (light) palette */
+static const char *altcolorname[] = {
+	/*
+	 * CLRS
+	 * https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/windowsterminal/CLRS.json
+	 */
+	"#000000", /* black */
+	"#f8282a", /* red */
+	"#328a5d", /* green */
+	"#fa701d", /* yellow */
+	"#135cd0", /* blue */
+	"#9f00bd", /* purple */
+	"#33c3c1", /* cyan */
+	"#b3b3b3", /* white */
+	"#555753", /* brightBlack */
+	"#fb0416", /* brightRed */
+	"#2cc631", /* brightGreen */
+	"#fdd727", /* brightYellow */
+	"#1670ff", /* brightBlue */
+	"#e900b0", /* brightPurple */
+	"#3ad5ce", /* brightCyan */
+	"#eeeeec", /* brightWhite */
+
+	[255] = 0, /* use colours past 255 for fg and bg */
+	"#262626", /* foreground */
+	"#ffffff", /* background */
+	"#000000", /* cursor select */
+	"#ffffff", /* reverse cursor select */
 };
 
 
@@ -125,10 +162,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 15;
-static unsigned int defaultrcs = 0;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+static unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 259;
 
 /*
  * Default shape of cursor
@@ -195,6 +232,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ XK_ANY_MOD,           XK_F6,          swapcolors,     {.i =  0} },
 };
 
 /*
