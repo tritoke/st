@@ -129,37 +129,53 @@ static const char *colorname[] = {
   "#ae81ff", /* bright magenta */
   "#a1efe4", /* bright cyan */
   "#f8f8f2", /* bright white */
+	
+	[255] = 0, /* use colours past 255 for fg and bg */
+	"#d0d0d0", /* foreground */
+	"#121212", /* background */
+	"#f8f8f2", /* cursor select */
+	"#d0d0d0", /* cursor reverse select */
 };
 
+ 
 /* Terminal colors for alternate (light) palette */
 static const char *altcolorname[] = {
-  /* solarized light */
-  "#eee8d5",  /*  0: black    */
-  "#dc322f",  /*  1: red      */
-  "#859900",  /*  2: green    */
-  "#b58900",  /*  3: yellow   */
-  "#268bd2",  /*  4: blue     */
-  "#d33682",  /*  5: magenta  */
-  "#2aa198",  /*  6: cyan     */
-  "#073642",  /*  7: white    */
-  "#fdf6e3",  /*  8: brblack  */
-  "#cb4b16",  /*  9: brred    */
-  "#93a1a1",  /* 10: brgreen  */
-  "#839496",  /* 11: bryellow */
-  "#657b83",  /* 12: brblue   */
-  "#6c71c4",  /* 13: brmagenta*/
-  "#586e75",  /* 14: brcyan   */
-  "#002b36",  /* 15: brwhite  */
+	/*
+	 * CLRS
+	 * https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/windowsterminal/CLRS.json
+	 */
+	"#000000", /* black */
+	"#f8282a", /* red */
+	"#328a5d", /* green */
+	"#fa701d", /* yellow */
+	"#135cd0", /* blue */
+	"#9f00bd", /* purple */
+	"#33c3c1", /* cyan */
+	"#b3b3b3", /* white */
+	"#555753", /* brightBlack */
+	"#fb0416", /* brightRed */
+	"#2cc631", /* brightGreen */
+	"#fdd727", /* brightYellow */
+	"#1670ff", /* brightBlue */
+	"#e900b0", /* brightPurple */
+	"#3ad5ce", /* brightCyan */
+	"#eeeeec", /* brightWhite */
+
+	[255] = 0, /* use colours past 255 for fg and bg */
+	"#262626", /* foreground */
+	"#ffffff", /* background */
+	"#000000", /* cursor select */
+	"#ffffff", /* reverse cursor select */
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 12;
-unsigned int defaultbg = 8;
-unsigned int defaultcs = 14;
-static unsigned int defaultrcs = 15;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 259;
 
 /*
  * Default shape of cursor
