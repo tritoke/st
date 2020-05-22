@@ -1,0 +1,6 @@
+# don't commit binary files
+hb.o
+st.o
+x.o
+boxdraw.o
+st
