@@ -10,6 +10,7 @@ static char *font = "JetBrains Mono:size=10";
 static char *font2[] = {
 	"Noto Color Emoji:size=10", /* colour emoji */
 	"Symbols Nerd Font:size=10", /* cool terminal symbols */
+	"DejaVu Sans:size=10", /* braille - ytop etc */
 };
 
 static int borderpx = 0;
