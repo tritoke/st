@@ -90,6 +90,7 @@ void toggleprinter(const Arg *);
 
 int tattrset(int);
 void tnew(int, int);
+int tisaltscr(void);
 void tresize(int, int);
 void tsetdirtattr(int);
 void ttyhangup(void);
