@@ -1112,7 +1112,6 @@ void
 xloadsparefonts(void)
 {
 	FcPattern *pattern;
-	double sizeshift, fontval;
 	int fc;
 	char **fp;
 
@@ -1141,14 +1140,10 @@ xloadsparefonts(void)
 			die("can't open spare font %s\n", *fp);
 	   		
 		if (defaultfontsize > 0) {
-			sizeshift = usedfontsize - defaultfontsize;
-			if (sizeshift != 0 &&
-					FcPatternGetDouble(pattern, FC_PIXEL_SIZE, 0, &fontval) ==
-					FcResultMatch) {	
-				fontval += sizeshift;
+			if (fabs(usedfontsize - defaultfontsize) > 0.0001) {
 				FcPatternDel(pattern, FC_PIXEL_SIZE);
 				FcPatternDel(pattern, FC_SIZE);
-				FcPatternAddDouble(pattern, FC_PIXEL_SIZE, fontval);
+				FcPatternAddDouble(pattern, FC_PIXEL_SIZE, usedfontsize);
 			}
 		}
 	
